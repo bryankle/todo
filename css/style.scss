@@ -1,0 +1,179 @@
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}  
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+#container {
+	width: 350px;
+	height: 500px;
+	margin:0 auto;
+}
+
+#completed-list {
+	display: none;
+}
+
+.container--add-task {
+	margin-top:25px;
+}
+
+#completed-list-container li {
+	padding-top:5%;
+	padding-bottom:5%;
+	padding-left:5%;
+	border-bottom:1px solid #9e9e9e;
+}
+/* TASK MENU ICON FOR EDITING AND DELETING */
+
+/* EDIT MATERIALIZE CSS LIBRARY */
+.dropdown-content {
+  background-color: #fff;
+  margin: 0;
+  display: none;
+  min-width: 60px;
+  max-width: 60px;
+  max-height: 650px;
+  overflow-y: visible;
+  opacity: 0;
+  position: absolute;
+  will-change: width, height;
+  .dropdown-content {
+  	margin-left:100%;
+  }
+}
+
+
+
+.dropdown-button {
+	z-index:-99999;
+}
+
+
+.task-menu {
+	display:none;
+	margin-right:10px;
+}
+
+.list-edit {
+	z-index:1;
+}
+
+.task-menu:hover {
+	cursor: pointer;
+}
+
+.tasks:hover {
+
+	.task-menu  {
+		display:block;
+		-webkit-animation: fadeIn 1s;
+	    animation: fadeIn 1s;
+	}
+	.row {
+		background-color:red;
+	}
+
+}
+
+#textarea {
+	width:200px;
+	height:20px;
+	position:relative;
+	top:-7.5px;
+	right: 3.5px;
+}
+
+.tasks {
+	height:25px;
+}
+
+
+
+// Task items
+
+#task-list {
+	li {
+		
+		position:relative;
+		p {
+		}
+		
+	} 
+
+}
+
+.highlight {
+	z-index:-100;
+	border-bottom: 3px solid #AB464B;
+	position:absolute;
+	width:317px;
+	height:21px;
+	left:23px;
+}
+
+// Input color change priority
+
+[type="checkbox"].filled-in:not(:checked) + label:after {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid #5a5a5a;
+  top: 0px;
+  z-index: 0;
+}
+
+.high-priority[type="checkbox"].filled-in:not(:checked) + label:after {
+	border: 2px solid #D1797D;	
+}
+.high-priority[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #D1797D;
+  background-color: #D1797D;
+}
+
+.medium-priority[type="checkbox"].filled-in:not(:checked) + label:after {
+	border: 2px solid #D4A27B;
+}
+.medium-priority[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #D4A27B;
+  background-color: #D4A27B;
+}
+
+.low-priority[type="checkbox"].filled-in:not(:checked) + label:after {
+	border: 2px solid #4B837F;
+}
+.low-priority[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #4B837F;
+  background-color: #4B837F;
+}
+
+// Setting priority background color on dropdown menu
+
+.high-priority-background-menu {
+	background-color: #D1797D;
+}
+
+.medium-priority-background-menu {
+	background-color: #D4A27B;
+}
+
+.low-priority-background-menu {
+	background-color: #6F9A97;
+}
+
+.priority-btn {
+	position: relative;
+	a {
+		position:absolute;
+	}
+}
+
+
+
+// Override sub menu dropdown highlight selection
+.nested-dropdown-content li:hover, .nested-dropdown-content li.active, .nested-dropdown-content li.selected .high-priority-background-menu {
+	opacity: 0.8;
+}
